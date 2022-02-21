@@ -5,8 +5,11 @@ def fizz_buzz(num)
     "fizz"
   elsif num % 3 == 0
     "buzz"
+  else
+    "hogehoge"
   end
 end
 
-num = gets.to_i
-puts fizz_buzz(num)
+(1..15).each do |num|
+  puts fizz_buzz(num)
+end
