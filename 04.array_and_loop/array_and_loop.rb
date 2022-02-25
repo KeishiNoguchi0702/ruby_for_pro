@@ -54,3 +54,6 @@ e, f = [100, 200, 300]
 
 #divmodは商と余りを配列で返す
 14.divmod(3) #=> [4,2]
+
+#多重代入で別々の辺ストして受け取る
+quotient, remainder = 14.divmod(3)
