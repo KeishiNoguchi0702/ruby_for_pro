@@ -177,3 +177,8 @@ numbers = (1..4).to_a
 sum = 0
 numbers.each { |n| sum += n }
 sum
+
+#stepメソッドでループ処理
+numbers = []
+(1..10).step(2) { |n| numbers << n }
+numbers
