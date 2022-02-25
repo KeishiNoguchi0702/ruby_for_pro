@@ -90,3 +90,7 @@ numbers = [1,2,3,4,5]
 non_multiples_of_three = numbers.reject { |n| n % 3 == 0 }
 non_multiples_of_three
 
+#findメソッドで、ブロック内の評価が最初に真である要素を格納する
+numbers = [1,2,3,4,5]
+even_number = numbers.find { |n| n.even? }
+even_number
