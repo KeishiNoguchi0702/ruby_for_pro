@@ -61,3 +61,7 @@ quotient, remainder = 14.divmod(3)
 #配列から値が2の要素を削除する
 a = [1,2,3,1,2,3]
 a.delete(2) #=> [1, 3, 1, 3]
+
+#delete_ifメソッドで配列から値が奇数の要素を削除する
+a = [1,2,3,1,2,3]
+a.delete_if { |n| n.odd? }
