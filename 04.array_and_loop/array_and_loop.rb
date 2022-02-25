@@ -94,3 +94,16 @@ non_multiples_of_three
 numbers = [1,2,3,4,5]
 even_number = numbers.find { |n| n.even? }
 even_number
+
+#injectメソッドを使用すれば、①のコードを②のように完結に記述できる
+
+#①
+numbers = [1,2,3,4]
+sum = 0
+numbers.each { |n| sum += n }
+sum #=> 10
+
+#②
+numbers = [1,2,3,4]
+sum = numbers.inject(0) { |result, n| result + n }
+sum #=> 10
