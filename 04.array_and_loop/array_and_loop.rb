@@ -107,3 +107,7 @@ sum #=> 10
 numbers = [1,2,3,4]
 sum = numbers.inject(0) { |result, n| result + n }
 sum #=> 10
+
+#&:メソッド以下の2つのコードは同じこと
+[1,2,3,4,5,6].select { |n| n.doo? }
+[1,2,3,4,5,6].select(&:odd?)
