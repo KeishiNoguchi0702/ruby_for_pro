@@ -65,3 +65,11 @@ a.delete(2) #=> [1, 3, 1, 3]
 #delete_ifメソッドで配列から値が奇数の要素を削除する
 a = [1,2,3,1,2,3]
 a.delete_if { |n| n.odd? }
+
+#ブロック内には2行以上のコードを記述できる
+numbers = [1,2,3,4]
+sum = 0
+numbers.each do |n|
+  sum_value = n.even?? n * 10 : n
+  sum += sum_value
+end
