@@ -344,3 +344,11 @@ a #=> [0, 0, 0, 0, 0]
 #添字付きの繰り返し処理
 fruits = ["apple", "orange", "melon"]
 fruits.each_with_index { |fruit, i| puts "#{i}:#{fruit}" }
+
+#with_indexメソッドを使った添字付きの処理
+
+#mapメソッドとwith_indexメソッドの組み合わせ
+fruits = %w(apple orange melon)
+fruits.map.with_index { |fruit, i| "#{i}:#{fruit}" }
+#=> ["0:apple", "1:orange", "2:melon"]
+
