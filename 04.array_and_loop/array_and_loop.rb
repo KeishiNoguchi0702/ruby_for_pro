@@ -284,3 +284,10 @@ a.push(1) #=> [1]
 a.push(*b) #=>[1,2,3]
 a.push(*[4,5]) #=> [1,2,3,4,5]
 
+#メソッドの可変長引数
+def greeting(*names)
+  "#{names.join("と")}、こんにちは！"
+end
+greeting("もーくーさん")
+greeting("もーくーさん", "けーくんさん")
+greeting("もーくーさん", "けーくんさん", "pohさん")
