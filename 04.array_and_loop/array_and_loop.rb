@@ -352,3 +352,7 @@ fruits = %w(apple orange melon)
 fruits.map.with_index { |fruit, i| "#{i}:#{fruit}" }
 #=> ["0:apple", "1:orange", "2:melon"]
 
+#delete_ifメソッドとwith_indexの組み合わせ
+fruits = %w(apple orange melon)
+fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
+#=> ["apple", "melon"]
