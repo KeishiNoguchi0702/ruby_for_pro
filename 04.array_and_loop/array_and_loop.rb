@@ -142,3 +142,19 @@ def liquid?(temperature)
 end
 liquid?(-1)
 liquid?(10)
+
+#case文で範囲オブジェクトを使用する
+def charge(age)
+  case age
+  when 0..5
+    0
+  when 6..12
+    300
+  when 13..18
+    600
+  else
+    1000
+  end
+end
+charge(3)
+
