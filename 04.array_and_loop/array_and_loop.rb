@@ -340,4 +340,7 @@ a #=> [0, 0, 0, 0, 0]
   str #=> "default"
   str.upcase!
   a #=> ["DEFAULT", "default", "default", "default", "default"]   ブロックを使用した場合は、ブロックが呼ばれるために別々のオブジェクトが生成されるため①の問題を回避できる
-  
+
+#添字付きの繰り返し処理
+fruits = ["apple", "orange", "melon"]
+fruits.each_with_index { |fruit, i| puts "#{i}:#{fruit}" }
