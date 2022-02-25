@@ -131,3 +131,7 @@ scope.include?(1)
 scope.include?(4.9)
 scope.include?(5)
 scope.include?(6)
+
+#範囲オブジェクトを使用して、配列や文字列の一部を抜き出す
+[1,2,3,4,5][1..3] #=> [2, 3, 4]
+"abcdef"[1..3] #=> "bcd"
