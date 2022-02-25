@@ -309,3 +309,35 @@ prefix = "This is"
 "Ruby".chars #=> ["R", "u", "b", "y"]
 "miku,keishi,poh,puu".split(",") #=> ["miku", "keishi", "poh", "puu"]
 
+#配列に初期値を設定する
+
+#以下のコードは同じ
+a = Array.new
+a = []
+
+#要素が5つの配列を作成する
+a = Array.new(5)
+a #=> [nil, nil, nil, nil, nil]
+
+#要素が5つで初期値が0の配列を作成する
+a = Array.new(5,0)
+a #=> [0, 0, 0, 0, 0]
+
+#配列に初期値を設定する場合の注意点
+
+  #①通常の配列の生成方法の場合
+  a = Array.new(5, "default")
+  a #=> => ["default", "default", "default", "default", "default"]
+  str = a[0]
+  str #=> "default"
+  str.upcase!
+  a #=> ["DEFAULT", "DEFAULT", "DEFAULT", "DEFAULT", "DEFAULT"]   初期値は配列の要素がすべて同じオブジェクトを参照しているためにこうなる
+
+  #②ブロックを使用する場合
+  a = Array.new(5) {"default"}
+  a #=> => ["default", "default", "default", "default", "default"]
+  str = a[0]
+  str #=> "default"
+  str.upcase!
+  a #=> ["DEFAULT", "default", "default", "default", "default"]   ブロックを使用した場合は、ブロックが呼ばれるために別々のオブジェクトが生成されるため①の問題を回避できる
+  
