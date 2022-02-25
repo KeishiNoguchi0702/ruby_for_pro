@@ -85,3 +85,8 @@ numbers = [1,2,3,4,5]
 even_numbers = numbers.select { |n| n.even? }
 even_numbers #=> [2, 4]
 
+#rejectメソッドで、ブロック内の評価が真の要素を除外する（＝偽の要素を集める）
+numbers = [1,2,3,4,5]
+non_multiples_of_three = numbers.reject { |n| n % 3 == 0 }
+non_multiples_of_three
+
