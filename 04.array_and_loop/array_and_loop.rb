@@ -80,3 +80,8 @@ new_numbers = Array.new
 numbers.each { |n| new_numbers.push(n * 10) }
 new_numbers #=> [10, 20, 30, 40, 50]
 
+#selectメソッドでブロック内の評価が真の値を格納する
+numbers = [1,2,3,4,5]
+even_numbers = numbers.select { |n| n.even? }
+even_numbers #=> [2, 4]
+
