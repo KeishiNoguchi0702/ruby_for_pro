@@ -73,3 +73,10 @@ numbers.each do |n|
   sum_value = n.even?? n * 10 : n
   sum += sum_value
 end
+
+#mapメソッド（各要素に対してブロックを評価した結果を、新たな配列に格納する）
+numbers = [1,2,3,4,5]
+new_numbers = Array.new
+numbers.each { |n| new_numbers.push(n * 10) }
+new_numbers #=> [10, 20, 30, 40, 50]
+
