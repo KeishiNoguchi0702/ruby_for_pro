@@ -135,3 +135,10 @@ scope.include?(6)
 #範囲オブジェクトを使用して、配列や文字列の一部を抜き出す
 [1,2,3,4,5][1..3] #=> [2, 3, 4]
 "abcdef"[1..3] #=> "bcd"
+
+#n以上m以下（...なら以上未満）の判定を行う
+def liquid?(temperature)
+  (0..100).include?(temperature)
+end
+liquid?(-1)
+liquid?(10)
