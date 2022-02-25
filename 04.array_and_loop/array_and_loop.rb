@@ -305,3 +305,7 @@ a = [1,2,3]
 prefix = "This is"
 %W(#{prefix}\ an\ apple small\nmelon orange) #バックスラッシュを使用する場合は、%wではなく%Wを使用する
 
+#文字列を配列に変換する
+"Ruby".chars #=> ["R", "u", "b", "y"]
+"miku,keishi,poh,puu".split(",") #=> ["miku", "keishi", "poh", "puu"]
+
