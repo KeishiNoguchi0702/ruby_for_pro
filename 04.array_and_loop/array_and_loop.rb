@@ -158,3 +158,13 @@ def charge(age)
 end
 charge(3)
 
+#値が連続する配列を生成する
+(1..5).to_a
+(1...5).to_a
+
+("a".."e").to_a
+("a"..."e").to_a
+
+("bad".."bag").to_a
+("bad"..."bag").to_a
+
