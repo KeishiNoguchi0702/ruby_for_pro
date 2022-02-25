@@ -115,3 +115,19 @@ sum #=> 10
 #範囲オブジェクト
 (1..5).class #=> Range
 (1...5).class #=> Range
+
+#..を使うと5が範囲に含まれる（1以上5以下）
+scope = 1..5
+scope.include?(0)
+scope.include?(1)
+scope.include?(4.9)
+scope.include?(5)
+scope.include?(6)
+
+#...を使うと5が範囲に含まれる（1以上5未満）
+scope = 1...5
+scope.include?(0)
+scope.include?(1)
+scope.include?(4.9)
+scope.include?(5)
+scope.include?(6)
