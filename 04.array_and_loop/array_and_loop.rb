@@ -698,3 +698,16 @@ end
   end
   calc_with_break #=> 20
 
+  #②return文を使用する場合
+  def calc_with_return
+    numbers = [1,2,3,4,5,6]
+    target = nil
+    numbers.shuffle.each do |n|
+      target = n
+      return if n.even?
+    end
+    target * 10
+  end
+  calc_with_return
+  #上記の結果はnilになる。returnが呼ばれた瞬間にメソッドを脱出しており、さらにreturnには引数が渡されていないため、結果としてnilになる
+  
