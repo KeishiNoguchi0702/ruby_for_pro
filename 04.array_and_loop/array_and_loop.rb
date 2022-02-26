@@ -597,3 +597,11 @@ end
     puts n
     break if n == 5
   end
+
+  #上記のコードをwhile文で書き換え
+  numbers = [1,2,3,4,5]
+  while true
+    n = numbers.sample
+    puts n
+    break if n == 5
+  end
