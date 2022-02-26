@@ -731,3 +731,32 @@ end
   #1
   #3
   #5
+
+  #each, while, until, forの中でも浸かる点や、入れ子になった処理の中では一番内側のループが中断対象になる点はbreakと同じ
+  numbers = [1,2,3,4,5]
+  i = 0
+  while i < numbers.size
+    n = numbers[i]
+    i += 1
+    next if n.even? #whileの中でnextを使う
+    puts n
+  end
+  #1
+  #3
+  #5
+
+  fruits = %w(apple melon orange)
+  numbers = [1,2,3,4]
+  fruits.each do |fruit|
+    numbers.each do |n|
+      next if n.even?
+      puts "#{fruit}, #{n}"
+    end
+  end
+  #apple, 1
+  #apple, 3
+  #melon, 1
+  #melon, 3
+  #orange, 1
+  #orange, 3
+
