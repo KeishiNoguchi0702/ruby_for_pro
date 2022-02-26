@@ -472,3 +472,6 @@
   symbol.to_s #=> "apple"
   string == symbol.to_s #=> true
   string + symbol.to_s #=> "appleapple"
+
+  #エイリアスメソッドのid2nameでも実現できる
+  :apple.id2name #=> "apple"
