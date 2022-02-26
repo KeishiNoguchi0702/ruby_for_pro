@@ -605,3 +605,18 @@ end
     puts n
     break if n == 5
   end
+#
+
+#繰り返し処理とEnumerableモジュール
+  #mapメソッドやselectメソッドなどはEnumerableモジュールとして定義されている
+  #ArrayクラスやRangeクラス、Enumerableクラスは、すべてEnumerableモジュールをincludeしている
+  [1,2,3].class #=> Array
+  Array.include?(Enumerable) #=> true
+
+  (1..3).class #=> Range
+  (1..3).include?(Enumerable) #=> true
+
+  1.upto(3).class #=> Enumerator
+  Enumerator.include?(Enumerable) #=> true
+#
+
