@@ -35,3 +35,10 @@
   #すでにキーが入っていた場合には上書きされる
   currencies["Italy"] = "ユーロ"
   currencies #=> {"Italy"=>"ユーロ"}
+
+  #ハッシュのキーを指定して値を取得する方法
+  #ハッシュは内部構造上、大量にデータが格納されていても高速で取得できることが特徴
+  currencies = { "japan" => "yen"}
+  currencies["japan"] #=> "yen"
+
+  
