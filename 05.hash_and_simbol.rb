@@ -231,3 +231,9 @@
   #keysメソッド
   currencies = { japan: "yen", us: "dollar", india: "ruppe"}
   currencies.keys # => [:japan, :us, :india]
+
+  #valuesメソッド
+  currencies = { japan: "yen", us: "dollar", india: "ruppe"}
+  currencies.values #=> ["yen", "dollar", "ruppe"]
+
+  
