@@ -356,3 +356,21 @@ fruits.map.with_index { |fruit, i| "#{i}:#{fruit}" }
 fruits = %w(apple orange melon)
 fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
 #=> ["apple", "melon"]
+
+#eachメソッドでブロックに配列を渡す
+dimensions = [
+  #[縦,横]
+  [10,20],
+  [30,40],
+  [50,60]
+]
+
+areas = []
+
+dimensions.each do |dimension|
+  length = dimension[0]
+  width = dimension[1]
+  areas << length * width
+end
+
+areas #=> => [200, 1200, 3000]
