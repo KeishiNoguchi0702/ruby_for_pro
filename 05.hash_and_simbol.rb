@@ -176,3 +176,51 @@
     phones: {home: "123-456", mobile: "090-1234-5678"}
   }
   #=> {:name=>"Keishi", :age=>34, :friends=>["pisuke", "usagi"], :phones=>{:home=>"123-456", :mobile=>"090-1234-5678"}}
+#
+
+#メソッドのキーワード引数とハッシュ
+  #架空のメソッド
+  def buy_burger(menu, drink, potato)
+    if drink
+    end
+    if potato
+    end
+  end
+
+  #上のメソッドの内容を見れば意味が掴み取れるが、下記のメソッド呼び出しだけを見ると意味が分かりづらい
+  buy_burger("cheese", true, true)
+  buy_burger("fish", true, false)
+
+  #架空のメソッド（キーワード引数）
+  def buy_burger(menu, drink: true, potato: true)
+    if drink
+    end
+    if potato
+    end
+  end
+
+  #シンボル：値の記法だと意味がわかりやすい
+  buy_burger("cheese", drink: true, potato: true)
+  buy_burger("fish", drink: true, potato: false)
+
+  #キーワード引数にはデフォルト値が設定されているため、引数を省略してもよい
+  buy_burger("cheese")
+  buy_burger("fish", potato:false)
+
+  #キーワード引数は自由に順序を入れ替えられる
+  buy_burger("cheese", potato: true, drink: false)
+
+  #キーワード引数のデフォルト値は省略することもできる
+  def buy_burger(menu, drink:, potato:)
+    if drink
+    end
+    if potato
+    end
+  end
+
+  buy_burger("cheese", drink: true, potato: true)
+
+  #キーワード引数と一致するハッシュであれば、メソッドの引数として渡すこともできる
+  params = {drink: true, potato: true}
+  buy_burger("fish", params)
+#
