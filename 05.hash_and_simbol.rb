@@ -487,3 +487,14 @@
   #ただし、一般的には文字列とシンボルを同等には扱わないと心得ておくべき
   "apple".include?("pp") #=> true
   "apple".include?(:pp) #TypeError: no implicit conversion of Symbol into String
+#
+
+#よく使われるイディオム：条件分岐で変数に代入 / &.演算子
+  #変数への代入と条件分岐を同時に実現するイディオム
+
+    #国名に応じて通貨を返す（該当する通貨がなければnil）
+    def find_currency(country)
+      currencies = { japan: "yen", us: "dollar", india: "ruppe"}
+      currencies[country]
+    end
+    
