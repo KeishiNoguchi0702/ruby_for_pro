@@ -585,3 +585,7 @@ end
   #while文を使って敢えて無限ループをさせる場合
   while true
   end
+
+  #kernelモジュールのloopメソッドを使用する場合
+  loop do
+  end
