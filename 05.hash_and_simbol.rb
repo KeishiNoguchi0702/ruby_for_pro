@@ -94,4 +94,7 @@
   #deleteメソッドで指定したキーが無ければnilが返る
   currencies = {"japan" => "yen", "us" => "dollar", "India" => "ruppe"}
   currencies.delete("Rosia") #=> nil
+  #ブロックを渡すとキーが見つからないときの戻り値を作成できる
+  currencies.delete("Rosia") { |key| "Not found: #{key}" } #=> "Not found: Rosia"
+
   
