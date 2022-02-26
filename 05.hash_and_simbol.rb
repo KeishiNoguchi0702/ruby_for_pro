@@ -250,3 +250,7 @@
   #SyntaxError: unexpected '}', expecting =>
   #{japan: "yen", h}
   #                ^
+
+  #mergeメソッドでも同じ結果を得ることができる
+  h = {us: "dollar", india: "ruppe"}
+  {japan: "yen"}.merge(h) #=> {:japan=>"yen", :us=>"dollar", :india=>"ruppe"}
