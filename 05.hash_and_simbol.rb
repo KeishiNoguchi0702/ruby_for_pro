@@ -333,3 +333,9 @@
   #キーが重複する場合は最後のものが上書きされるが、基本こんな書き方をしてはダメ
   array = [[:japan, "yen"], [:japan, "円"]]
   array.to_h #=> {:japan=>"円"}
+
+  #昔のやり方：キーと値のペアの配列をHash[]に渡す
+  array = [[:japan, "yen"], [:us, "dollar"], [:indian, "ruppe"]]
+  Hash[array] #=> {:japan=>"yen", :us=>"dollar", :indian=>"ruppe"}
+
+  
