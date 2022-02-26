@@ -556,3 +556,18 @@
 
   #下記コードと同じ意味
   limit = limit || 10
+#
+
+#よく使われるイディオム：!!を使った真偽値の型変換
+  #確実にtrueまたはfalseを返すイディオム
+  #?で終わるメソッド自分で作成した場合に、確実にtrueかfalseだけで返したいと思ったとき
+
+  #簡潔ではないコード
+  def user_exists?
+    user = find_user #DBなどからユーザを探す（なければnil）
+    if user
+      true
+    else
+      false
+    end
+  end
