@@ -118,3 +118,12 @@
   "apple".object_id #=> 70320628365220
   "apple".object_id #=> 70320628480620
 
+  #シンボルはイミュータブル（破壊的な変更ができない）
+  #なにかに名前をつけたいがだれかに勝手に変えられては困る、というケースに向いている
+  string = "apple"
+  string.upcase!
+  string #=> "APPLE"
+  symbol = :apple
+  symbol.upcase! #=> NoMethodError: undefined method `upcase!' for :apple:Symbol
+
+  
