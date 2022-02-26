@@ -168,4 +168,11 @@
   hash[:abc] #=> nil
   hash["def"] #=> nil
 
-  
+  #ハッシュに格納する値に関しても、異なるデータ型が混在するケースがよくある
+  person = {
+    name: "Keishi",
+    age: 34,
+    friends: ["pisuke", "usagi"],
+    phones: {home: "123-456", mobile: "090-1234-5678"}
+  }
+  #=> {:name=>"Keishi", :age=>34, :friends=>["pisuke", "usagi"], :phones=>{:home=>"123-456", :mobile=>"090-1234-5678"}}
