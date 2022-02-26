@@ -710,4 +710,12 @@ end
   end
   calc_with_return
   #上記の結果はnilになる。returnが呼ばれた瞬間にメソッドを脱出しており、さらにreturnには引数が渡されていないため、結果としてnilになる
+
+  #retrunの役割はあくまでも「メソッドからの脱出」のため、メソッドでreturnを呼び出したらエラーになる
+  [1,2,3].each do |n|
+    puts n
+    return
+  end
+  #1
+  #LocalJumpError: unexpected return
   
