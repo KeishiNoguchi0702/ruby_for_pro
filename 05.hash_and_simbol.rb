@@ -241,3 +241,8 @@
   currencies.has_key?(:japan) #=> true
   #has_key?メソッド意外はすべて、has_key?メソッドのエイリアス
   
+  #**でハッシュ展開
+  h = {us: "dollar", india: "ruppe"}
+  {japan: "yen", **h } #> {:japan=>"yen", :us=>"dollar", :india=>"ruppe"}
+
+  
