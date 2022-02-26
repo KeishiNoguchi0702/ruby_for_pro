@@ -441,3 +441,8 @@
 
   #%i()記法でシンボルの配列を作る
   %i(apple orange melon) #=> [:apple, :orange, :melon]
+
+  #改行文字を含めたり、式展開する場合は%Iを使用する
+  name = "Alice"
+  #%iは改行文字や式典会の構文が、そのままシンボルになる
+  %i(hello\ngood-bye #{name.upcase}) #=> [:"hello\\ngood-bye", :"\#{name.upcase}"]
