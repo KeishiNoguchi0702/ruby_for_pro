@@ -681,4 +681,20 @@ end
       throw :done, 123
     end
   ret #=> 123
+#
+
+#繰り返し処理で使うbreakとreturnの違い
+
+  #breakは繰り返し処理からの脱出だが、returnはメソッドからの脱出になる
+  #①break文を使用する場合
+  def calc_with_break
+    numbers = [1,2,3,4,5,6]
+    target = nil
+    numbers.shuffle.each do |n|
+      target = n
+      break if n.even?
+    end
+    target * 10
+  end
+  calc_with_break #=> 20
 
