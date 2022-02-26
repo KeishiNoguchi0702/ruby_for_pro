@@ -8,3 +8,10 @@
   
   #国ごとに通貨の単位を格納したハッシュを作成する
   {"japan" => "yen", "us" => "dollar", "india" => "ruppe"}
+
+  #改行してハッシュを作ることも可能
+  {
+    "japan" => "yen", 
+    "us" => "dollar", 
+    "india" => "ruppe"
+  }
