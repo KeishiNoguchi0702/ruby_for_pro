@@ -85,3 +85,10 @@
   #sizeメソッドとlengthメソッドでハッシュ内の要素の個数を確認できる
   Hash.new.size #=> 0
   a.length      #=> 3
+
+  #deleteメソッドで指定したキーに対応する要素を削除できる
+  currencies = {"japan" => "yen", "us" => "dollar", "India" => "ruppe"}
+  currencies.delete("japan")
+  currencies #=> {"us"=>"dollar", "India"=>"ruppe"}
+
+  
