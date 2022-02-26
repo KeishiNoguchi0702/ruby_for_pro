@@ -42,4 +42,16 @@
   currencies["japan"] #=> "yen"
   #存在しないキーを指定した場合にはnilが返ってくる
   currencies["Rosia"] #=> nil
-  
+#
+
+#ハッシュを使用した繰り返し処理
+
+  #eachメソッドにより、KVSを順番に取り出すことができる
+  #ブロック引数が2つである点に注意が必要
+  currencies = {"japan" => "yen", "us" => "dollar", "India" => "ruppe"}
+  currencies.each do |key, value|
+    puts "#{key}:#{value}"
+  end
+  #japan:yen
+  #us:dollar
+  #India:ruppe
