@@ -96,5 +96,15 @@
   currencies.delete("Rosia") #=> nil
   #ブロックを渡すとキーが見つからないときの戻り値を作成できる
   currencies.delete("Rosia") { |key| "Not found: #{key}" } #=> "Not found: Rosia"
+#
 
-  
+#シンボル
+  #シンボルと文字列は同じ見た目だが、その中身は異なる
+
+  #シンボルと文字列の違い
+  #シンボルは、Symbolクラスのオブジェクト：文字列はStringクラスのオブジェクト
+  #シンボルは、表面的には文字列だが、Ruby内部では整数として扱われる
+
+  #文字列よりもシンボルのほうが高速に比較できる
+  "apple" == "apple"
+  :apple == :apple
