@@ -295,3 +295,23 @@
   #ハッシュリテラルの{}を省略してメソッドを呼び出す
   buy_burger("fish", "drink" => true, "potato" => false) #{"drink"=>true, "potato"=>false}
 #
+
+#ハッシュリテラルの{}とブロックの{}
+  #下記のコードに対して...
+  def buy_burger(menu, options = {})
+    puts options
+  end
+  
+  #以下のコードを実行するとエラーになる
+  #理由は、{}がハッシュリテラルではなくブロックの{}だとRubyに解釈されたため
+  buy_burger {"drink" => true, "potato" => false}
+    #SyntaxError: unexpected =>, expecting '}'
+    #buy_burger {"drink" => true, "potato" => false}
+    #                    ^~
+  
+    #メソッドの第1引数にハッシュを渡そうとする場合は必ず()をつけてメソッドを呼び出さなければならない
+  buy_burger({"drink" => true, "potato" => false})
+  
+  #第2引数硫黄にハッシュが来る場合は、()を省略してもエラーにはならない
+  buy_burger "fish", {"drink" => true, "potato" => false} #{"drink"=>true, "potato"=>false}
+#
