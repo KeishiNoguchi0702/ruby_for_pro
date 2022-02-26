@@ -377,6 +377,7 @@ fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
 
   areas #=> => [200, 1200, 3000]
 
+#配列がブロック引数に渡される場合
   #ブロックの引数を2つに分けた場合
   dimensions = [
     [10,20],
@@ -433,3 +434,4 @@ fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
   #length: 10, width: 20, i: 0
   #length: 30, width: 40, i: 1
   #length: 50, width: 60, i: 2
+
