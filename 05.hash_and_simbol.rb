@@ -553,3 +553,6 @@
   limit = false
   limit ||= 10
   limit #=> 10
+
+  #下記コードと同じ意味
+  limit = limit || 10
