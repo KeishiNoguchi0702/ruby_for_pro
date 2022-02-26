@@ -498,3 +498,11 @@
       currencies[country]
     end
     
+    #指定された国の通貨を大文字にして返す
+    def show_currency(country)
+      currency = find_currency(country)
+      #nilではないことを確認（nilだとupcaseが呼び出せないため）
+      if currency
+        currency.upcase
+      end
+    end
