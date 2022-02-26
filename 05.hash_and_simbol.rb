@@ -448,3 +448,12 @@
   %i(hello\ngood-bye #{name.upcase}) #=> [:"hello\\ngood-bye", :"\#{name.upcase}"]
   #%Iは改行文字や式典会が勇往になった上でシンボルを作る
   %I(hello\ngood-bye #{name.upcase}) #=> [:"hello\ngood-bye", :ALICE]
+#
+
+#シンボルと文字列の関係
+  #文字列とシンボルは見た目は同じでも、別のオブジェクトのため互換性は無い
+  string = "apple"
+  symbol = :apple
+
+  string == symbol #=> false
+  string + symbol #=> TypeError: no implicit conversion of Symbol into String
