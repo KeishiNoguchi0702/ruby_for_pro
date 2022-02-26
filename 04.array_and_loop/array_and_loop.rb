@@ -556,3 +556,26 @@ end
     a.delete_at(-1)
   end
   a
+#
+
+#Rubyでは余り使用しないfor文
+  #for..endの記法
+  numbers = [1,2,3,4,5]
+  sum = 0
+  for num in numbers
+    sum += num
+  end
+  sum #=> 15
+
+  #doを入れることで1行で記述する方法
+  numbers = [1,2,3,4,5]
+  sum = 0
+  for num in numbers do sum += num end
+  sum #=> 15
+
+  #forで実現できることはeachメソッドで実現できるが、for文の中で登場したローカル変数をfor文の外でも使用できる点が異なる
+  numbers = [1,2,3,4,5]
+  for num in numbers
+    sum += num
+  end
+  sum
