@@ -511,3 +511,6 @@ end
   1.step(10,2) {|n| a.push(n) }
   a #=> [1, 3, 5, 7, 9]
 
+  a = Array.new
+  10.step(0,-2) {|n| a.push(n) }
+  a
