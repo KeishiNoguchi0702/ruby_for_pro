@@ -464,3 +464,11 @@
 
   string.to_sym
   string.to_sym == symbol #=> ture
+
+  #シンボルを文字列に変換する場合はto_sメソッドを使用する
+  string = "apple"
+  symbol = :apple
+
+  symbol.to_s #=> "apple"
+  string == symbol.to_s #=> true
+  string + symbol.to_s #=> "appleapple"
