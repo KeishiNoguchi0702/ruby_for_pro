@@ -576,3 +576,11 @@
   def user_exists?
     !!find_user
   end
+
+  #!!は、否定の否定。
+  !!true #=> true
+  !!1 #=> true
+  !!false #=> false
+  !!nil #=> false
+  #上記のように、trueかfalse以外の戻り値は返ってこなくなる
+  
