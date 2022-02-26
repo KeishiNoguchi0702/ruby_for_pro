@@ -347,3 +347,7 @@
   #ハッシュに対して存在しないキーを指定するとnilが返る
   h = Hash.new
   h[:foo] #=> nil
+
+  #nil以外の値を返したい場合は、Hash.newでハッシュを作成し、引数に初期値を記述する
+  h = Hash.new("hello")
+  h[:foo] #=> "hello"
