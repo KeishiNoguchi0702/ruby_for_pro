@@ -436,4 +436,5 @@
   #!を区切り文字に使う
   %s!ruby is fun! #=> :"ruby is fun"
 
-  
+  #()を区切り文字に使う
+  %s(ruby is fun)
