@@ -475,3 +475,11 @@
 
   #エイリアスメソッドのid2nameでも実現できる
   :apple.id2name #=> "apple"
+
+  #メソッドによっては文字列とシンボルを同等に扱うものがある
+  #respond_to?メソッドの引数には文字列とシンボル療法を渡せる
+  "apple".respond_to?("include?") #=> true
+  "apple".respond_to?(:include?) #=> true
+
+  "apple".respond_to?("foo_bar") #=> false
+  "apple".respond_to?(:foo_bar) #=> false
