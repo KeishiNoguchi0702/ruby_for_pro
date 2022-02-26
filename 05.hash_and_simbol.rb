@@ -320,3 +320,10 @@
   #ハッシュはto_aメソッドで配列に変換が可能。キーとバリューが1つの配列になり、ネストされる
   currencies = {japan: "yen", us: "dollar", indian: "ruppe"}
   currencies.to_a #=> [[:japan, "yen"], [:us, "dollar"], [:indian, "ruppe"]]
+
+  #配列に対してto_hメソッドを呼ぶと、配列をハッシュに変換できる
+  #ハッシュに変換する配列はキーと値の組み合わせごとに1つの配列に入る
+  array = [[:japan, "yen"], [:us, "dollar"], [:indian, "ruppe"]]
+  array.to_h #=> {:japan=>"yen", :us=>"dollar", :indian=>"ruppe"}
+
+  
