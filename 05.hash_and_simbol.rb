@@ -6,3 +6,5 @@
 
   {}.class #=> Hash
   
+  #国ごとに通貨の単位を格納したハッシュを作成する
+  {"japan" => "yen", "us" => "dollar", "india" => "ruppe"}
