@@ -479,3 +479,8 @@ end
 
   #以下のように引数指定に()を使用すればエラーにならない
   a.delete(100) {"みつかりません"}
+#
+
+#ブロックの直後にメソッドを記述
+  names = ["miku", "keishi", "pisuke", "usagi"]
+  san_names = names.map { |name| "#{name}さん"}.join("と")
