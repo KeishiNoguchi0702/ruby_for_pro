@@ -391,3 +391,17 @@ fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
   end
 
   areas #=> => [200, 1200, 3000]
+
+    #ブロックの引数が多すぎる場合ははみ出した分が切り捨てられる
+    dimensions = [
+      [10,20],
+      [30,40],
+      [50,60]
+    ]
+  
+    dimensions.each do |length, width, foo, bar|
+      p [length, width, foo, bar]
+    end
+    #[10, 20, nil, nil]
+    #[30, 40, nil, nil]
+    #[50, 60, nil, nil]
