@@ -483,3 +483,7 @@
 
   "apple".respond_to?("foo_bar") #=> false
   "apple".respond_to?(:foo_bar) #=> false
+
+  #ただし、一般的には文字列とシンボルを同等には扱わないと心得ておくべき
+  "apple".include?("pp") #=> true
+  "apple".include?(:pp) #TypeError: no implicit conversion of Symbol into String
