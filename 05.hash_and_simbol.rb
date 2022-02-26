@@ -315,3 +315,8 @@
   #第2引数硫黄にハッシュが来る場合は、()を省略してもエラーにはならない
   buy_burger "fish", {"drink" => true, "potato" => false} #{"drink"=>true, "potato"=>false}
 #
+
+#ハッシュから配列へ、配列からハッシュへ
+  #ハッシュはto_aメソッドで配列に変換が可能。キーとバリューが1つの配列になり、ネストされる
+  currencies = {japan: "yen", us: "dollar", indian: "ruppe"}
+  currencies.to_a #=> [[:japan, "yen"], [:us, "dollar"], [:indian, "ruppe"]]
