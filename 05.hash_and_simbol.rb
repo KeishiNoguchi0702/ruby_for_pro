@@ -271,3 +271,15 @@
   #特別な理由がない限り、疑似キーワードよりもキーワード引数を使用したほうがよい
   buy_burger("fish", slad: true) #=> nil
 #
+
+#任意のキーワードを受け付ける**引数
+  #キーワード引数では、無効なキーワード引数を指定するとエラーになる
+  #**引数を使用すると、想定外のキーワードぉothers引数でハッシュとして受け取る
+  #可変長引数と同じ考え方
+  def buy_burger(menu, drink: true, potato: true, **others)
+    puts others
+  end
+
+  buy_burger("fish", drink: true, potato: false, salad: true, chicken: false)
+  #{:salad=>true, :chicken=>false}
+#
