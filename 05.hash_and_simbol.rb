@@ -446,3 +446,5 @@
   name = "Alice"
   #%iは改行文字や式典会の構文が、そのままシンボルになる
   %i(hello\ngood-bye #{name.upcase}) #=> [:"hello\\ngood-bye", :"\#{name.upcase}"]
+  #%Iは改行文字や式典会が勇往になった上でシンボルを作る
+  %I(hello\ngood-bye #{name.upcase}) #=> [:"hello\ngood-bye", :ALICE]
