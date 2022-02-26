@@ -81,3 +81,7 @@
   #キーのxが異なっているためfalse
   c = { "x" => 10, "z" => 3, "y" => 2 }
   a == c #=> false
+
+  #sizeメソッドとlengthメソッドでハッシュ内の要素の個数を確認できる
+  Hash.new.size #=> 0
+  a.length      #=> 3
