@@ -523,4 +523,7 @@ end
   end
   a #=> [1, 1, 1, 1, 1]
 
-  
+  #条件式の後にdoを入れて1行で記述する
+  a = Array.new
+  while a.size < 5 do a.push(1) end
+  a #=> [1, 1, 1, 1, 1]
