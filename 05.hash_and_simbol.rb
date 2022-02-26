@@ -342,3 +342,8 @@
   array = [:japan, "yen", :us, "dollar", :inidian, "ruppe"]
   Hash[*array] #=> {:japan=>"yen", :us=>"dollar", :inidian=>"ruppe"}
 #
+
+#ハッシュの初期値を理解する
+  #ハッシュに対して存在しないキーを指定するとnilが返る
+  h = Hash.new
+  h[:foo] #=> nil
