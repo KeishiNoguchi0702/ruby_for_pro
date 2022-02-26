@@ -338,4 +338,7 @@
   array = [[:japan, "yen"], [:us, "dollar"], [:indian, "ruppe"]]
   Hash[array] #=> {:japan=>"yen", :us=>"dollar", :indian=>"ruppe"}
 
-  
+  #キーと値が交互に並ぶフラットな配列をsplat展開してもよい
+  array = [:japan, "yen", :us, "dollar", :inidian, "ruppe"]
+  Hash[*array] #=> {:japan=>"yen", :us=>"dollar", :inidian=>"ruppe"}
+#
