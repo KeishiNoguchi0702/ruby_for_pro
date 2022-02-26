@@ -419,3 +419,17 @@ fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
   #[10, 20]            
   #[50, 60]
   #[90, 100]
+
+  #each_index_withメソッドのように、もとから引数を2つ受け取る場合
+  dimensions = [
+    [10,20],
+    [30,40],
+    [50,60]
+  ]
+
+  dimensions.each_with_index do |(length, width), i|
+    puts "length: #{length}, width: #{width}, i: #{i}"
+  end
+  #length: 10, width: 20, i: 0
+  #length: 30, width: 40, i: 1
+  #length: 50, width: 60, i: 2
