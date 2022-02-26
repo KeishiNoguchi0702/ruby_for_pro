@@ -673,3 +673,12 @@ end
       end
     end
   end
+
+  #throwメソッドに第2引数を渡すとcatchメソッドの戻り値になる
+  ret = 
+    catch :done do
+      throw :done, 123
+    end
+  ret #=> 123
+
+  
