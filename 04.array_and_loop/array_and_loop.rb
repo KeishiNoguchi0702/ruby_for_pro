@@ -358,19 +358,36 @@ fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
 #=> ["apple", "melon"]
 
 #eachメソッドでブロックに配列を渡す
-dimensions = [
-  #[縦,横]
-  [10,20],
-  [30,40],
-  [50,60]
-]
 
-areas = []
+  #ふつうの受け取り方
+  dimensions = [
+    #[縦,横]
+    [10,20],
+    [30,40],
+    [50,60]
+  ]
 
-dimensions.each do |dimension|
-  length = dimension[0]
-  width = dimension[1]
-  areas << length * width
-end
+  areas = []
 
-areas #=> => [200, 1200, 3000]
+  dimensions.each do |dimension|
+    length = dimension[0]
+    width = dimension[1]
+    areas << length * width
+  end
+
+  areas #=> => [200, 1200, 3000]
+
+  #ブロックの引数を2つに分けた場合
+  dimensions = [
+    [10,20],
+    [30,40],
+    [50,60]
+  ]
+
+  areas = []
+
+  dimensions.each do |length, width|
+    areas << length * width
+  end
+
+  areas #=> => [200, 1200, 3000]
