@@ -510,3 +510,20 @@
     #通貨が見つかる場合と見つからない場合の結果を確認
     show_currency(:japan)
     show_currency(:brazil)
+
+    #---------------------------------------------------------------
+    #上記のままでも問題ないが、Rubyでは変数への代入そのものが戻り値を持つため、次のようにif文のなかで直接変数に格納することもできる
+
+    def find_currency(country)
+      currencies = { japan: "yen", us: "dollar", india: "ruppe"}
+      currencies[country]
+    end
+    
+    def show_currency(country)
+      if currency = find_currency(country) #変数に直接代入
+        currency.upcase
+      end
+    end
+
+    show_currency(:japan)
+    show_currency(:brazil)
