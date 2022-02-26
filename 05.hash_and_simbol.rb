@@ -126,4 +126,9 @@
   symbol = :apple
   symbol.upcase! #=> NoMethodError: undefined method `upcase!' for :apple:Symbol
 
+  #シンボルの特徴まとめ
+    #表面上は文字列っぽいので、プログラマにとって理解しやすい
+    #内部的には整数なので、コンピュータは高速に値を比較できる
+    #同じシンボルは同じオブジェクトであるため、メモリの使用効率が良い
+    #イミュータブルなので、勝手に値が変えられる心配がない
   
