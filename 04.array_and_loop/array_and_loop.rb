@@ -589,3 +589,11 @@ end
   #kernelモジュールのloopメソッドを使用する場合
   loop do
   end
+
+  #break文を使用して無限ループから脱出
+  numbers = [1,2,3,4,5]
+  loop do
+    n = numbers.sample #sampleメソッドでランダムに要素を1つ取得する
+    puts n
+    break if n == 5
+  end
