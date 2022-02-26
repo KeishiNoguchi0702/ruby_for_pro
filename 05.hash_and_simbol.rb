@@ -329,3 +329,7 @@
   #ハッシュとして解析不可能な配列に対してto_hメソッドを呼び出した場合はエラーになる
   array = %w(apple orange melon)
   array.to_h #TypeError: wrong element type String at 0 (expected array)
+
+  #キーが重複する場合は最後のものが上書きされるが、基本こんな書き方をしてはダメ
+  array = [[:japan, "yen"], [:japan, "円"]]
+  array.to_h #=> {:japan=>"円"}
