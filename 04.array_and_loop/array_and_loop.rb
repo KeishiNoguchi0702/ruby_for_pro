@@ -533,4 +533,19 @@ end
   a.push(1) while a.size < 5
   a #=> [1, 1, 1, 1, 1]
 
-  
+  #begin..endで条件に関係なく必ず1度は実行するようにする
+
+  #下記コードは必ず評価結果が偽になるため1度も実行されない
+    a = Array.new
+    while false
+      a.push(1)
+    end
+    a #=> []
+
+  #下記コードであれば、必ず1度は実行される
+    a = Array.new
+    begin 
+      a.push(1)
+    end while false
+    a #=> [1]
+    
