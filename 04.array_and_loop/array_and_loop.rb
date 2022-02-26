@@ -491,3 +491,8 @@ end
   san_names = names.map do |name|
     "#{name}さん"
   end.join("と")
+
+#timesメソッド
+  sum = 0
+  5.times {|n| sum += n}
+  sum #=> 10
