@@ -283,3 +283,15 @@
   buy_burger("fish", drink: true, potato: false, salad: true, chicken: false)
   #{:salad=>true, :chicken=>false}
 #
+
+#メソッドの呼び出し時の{}の省略
+  #Rubyでは「最後の引数がハッシュであれば、ハッシュリテラルの{}を省略できる」ルールがある
+  #optionsは任意のハッシュを受け付ける
+  def buy_burger(menu, options = {})
+    puts options
+  end
+  #キーを文字列にしたハッシュを渡すこともできるし、間違いではない
+  buy_burger("fish", {"drink" => true, "potato" => false}) #{"drink"=>true, "potato"=>false}
+  #ハッシュリテラルの{}を省略してメソッドを呼び出す
+  buy_burger("fish", "drink" => true, "potato" => false) #{"drink"=>true, "potato"=>false}
+#
