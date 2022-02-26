@@ -579,3 +579,9 @@ end
     sum += num
   end
   sum
+#
+
+#loopメソッド
+  #while文を使って敢えて無限ループをさせる場合
+  while true
+  end
