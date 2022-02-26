@@ -32,5 +32,6 @@
   currencies = Hash.new
   currencies["Italy"] = "euro"
   currencies #=> {"Italy"=>"euro"}
-
-  
+  #すでにキーが入っていた場合には上書きされる
+  currencies["Italy"] = "ユーロ"
+  currencies #=> {"Italy"=>"ユーロ"}
