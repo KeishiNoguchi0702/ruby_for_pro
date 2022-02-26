@@ -134,3 +134,13 @@
   
   #シンボルがよく使われるケースは、ソースコード上では文字列を使用したいが、中身が必ずしも文字列ではない場合
   #ハッシュは、その代表的な使用例である
+
+  #文字列をハッシュのキーにする
+  currencies = {"japan" => "yen", "us" => "dollar", "India" => "ruppe"}
+  currencies["japan"] #=> "yen"
+  #シンボルをハッシュのキーにする
+  currencies = { :japan => "yen", :us => "dollar", :india => "ruppe"}
+  #シンボルを使って値を取り出す（文字列よりも高速）
+  currencies[:japan] #=> "yen"
+
+  
