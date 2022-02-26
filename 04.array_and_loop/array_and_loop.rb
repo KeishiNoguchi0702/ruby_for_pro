@@ -496,3 +496,13 @@ end
   sum = 0
   5.times {|n| sum += n}
   sum #=> 10
+
+#uptoメソッドとdowntoメソッド
+  a = Array.new
+  1.upto(4) { |i| a << i}
+  a
+
+  a = Array.new
+  10.downto(1) {|i| a.push(i)}
+  a
+  
