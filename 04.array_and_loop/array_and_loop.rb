@@ -675,10 +675,10 @@ end
   end
 
   #throwメソッドに第2引数を渡すとcatchメソッドの戻り値になる
+  #下記コードのように、catchメソッドとthrowメソッドは、繰り返し処理とは無関係に使用することもできる
   ret = 
     catch :done do
       throw :done, 123
     end
   ret #=> 123
 
-  
