@@ -571,3 +571,8 @@
       false
     end
   end
+
+  #簡潔なコード
+  def user_exists?
+    !!find_user
+  end
