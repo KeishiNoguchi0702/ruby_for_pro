@@ -326,4 +326,6 @@
   array = [[:japan, "yen"], [:us, "dollar"], [:indian, "ruppe"]]
   array.to_h #=> {:japan=>"yen", :us=>"dollar", :indian=>"ruppe"}
 
-  
+  #ハッシュとして解析不可能な配列に対してto_hメソッドを呼び出した場合はエラーになる
+  array = %w(apple orange melon)
+  array.to_h #TypeError: wrong element type String at 0 (expected array)
