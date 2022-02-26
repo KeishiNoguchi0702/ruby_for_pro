@@ -514,3 +514,13 @@ end
   a = Array.new
   10.step(0,-2) {|n| a.push(n) }
   a
+
+#while文
+  #配列の要素数が5つになるまで要素を追加する
+  a = Array.new
+  while a.size < 5
+    a.push(1)
+  end
+  a #=> [1, 1, 1, 1, 1]
+
+  
