@@ -245,4 +245,8 @@
   h = {us: "dollar", india: "ruppe"}
   {japan: "yen", **h } #> {:japan=>"yen", :us=>"dollar", :india=>"ruppe"}
 
-  
+  #**をつけない場合はエラー構文になる
+  {japan: "yen", h}
+  #SyntaxError: unexpected '}', expecting =>
+  #{japan: "yen", h}
+  #                ^
