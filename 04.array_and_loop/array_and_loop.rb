@@ -482,5 +482,12 @@ end
 #
 
 #ブロックの直後にメソッドを記述
+  #{}の直後に記述する場合（こちらはわかりやすい）
   names = ["miku", "keishi", "pisuke", "usagi"]
   san_names = names.map { |name| "#{name}さん"}.join("と")
+
+  #endの直後に記述する場合（こちらは分かりづらいので、おすすめではない）
+  names = ["miku", "keishi", "pisuke", "usagi"]
+  san_names = names.map do |name|
+    "#{name}さん"
+  end.join("と")
