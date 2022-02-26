@@ -91,4 +91,7 @@
   currencies.delete("japan")
   currencies #=> {"us"=>"dollar", "India"=>"ruppe"}
 
+  #deleteメソッドで指定したキーが無ければnilが返る
+  currencies = {"japan" => "yen", "us" => "dollar", "India" => "ruppe"}
+  currencies.delete("Rosia") #=> nil
   
