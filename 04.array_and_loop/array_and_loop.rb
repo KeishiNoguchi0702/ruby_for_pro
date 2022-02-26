@@ -778,3 +778,16 @@ end
   #トマトはすきですか? => はい
   #セロリはすきですか? => いいえ
   #セロリはすきですか? => はい
+
+  #redoでは条件次第では永遠にループが続くこともありうるので、回数制限を設けておくべき
+  foods = %w(ピーマン トマト セロリ)
+  count = 0
+  foods.each do |food|
+    print "#{food}は好きですか？ => "
+    answer = "いいえ"
+    puts answer
+
+    count += 1
+    redo if answer != "はい" && count < 2
+    count = 0 #1行上の条件に該当した場合のみこの行は実行され
+  end
