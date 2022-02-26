@@ -435,3 +435,22 @@ fruits.delete_if.with_index { |fruit, i| fruit.include?("a") && i.odd? }
   #length: 30, width: 40, i: 1
   #length: 50, width: 60, i: 2
 
+#ブロックローカル変数：ブロック内外で偶然同じ名前の変数を使ってしまった場合に、エラーや予期せぬ動作を防止するために致し方なく使う感じ
+numbers = [1,2,3,4]
+sum = 0
+
+  #ブロック外の変数sumとは異なる同じ名称の変数sumを用意する
+numbers.each do |n;sum|
+    #別物の変数sumを10で初期化し、ブロック引数の値を加算する
+  sum = 10
+  sum  += n
+  p sum
+end
+sum
+
+sum   #ブロックの中で使っていたsumは別物なので、ブロックの外のsumには変化がない
+  #11
+  #12
+  #13
+  #14
+
