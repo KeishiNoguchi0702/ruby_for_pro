@@ -143,4 +143,6 @@
   #シンボルを使って値を取り出す（文字列よりも高速）
   currencies[:japan] #=> "yen"
 
-  
+  #オブジェクトが持っているメソッドをシンボルで管理していることもある
+  apple.methods #=> [:encode, ...(以下略)
+  :apple.methods #=> [:match, ...(以下略)
