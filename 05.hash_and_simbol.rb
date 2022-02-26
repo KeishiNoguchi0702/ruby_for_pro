@@ -506,3 +506,7 @@
         currency.upcase
       end
     end
+
+    #通貨が見つかる場合と見つからない場合の結果を確認
+    show_currency(:japan)
+    show_currency(:brazil)
