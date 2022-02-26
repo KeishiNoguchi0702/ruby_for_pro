@@ -527,3 +527,21 @@
 
     show_currency(:japan)
     show_currency(:brazil)
+
+    #---------------------------------------------------------------
+    #しかし上記のコードは、=と==を書き間違えたようにも見てしまう
+    #ここで&.演算子を使用すると便利。
+    #&.演算子は、レシーバがnilだった場合にエラーになることを防ぐ記法
+    #メソッドを呼び出されたオブジェクトがnilでない場合はその結果を、nilだった場合はnilを返す
+    def find_currency(country)
+      currencies = { japan: "yen", us: "dollar", india: "ruppe"}
+      currencies[country]
+    end
+    
+    def show_currency(country)
+    currency = find_currency(country) #変数に直接代入
+    currency&.upcase
+  end
+
+    show_currency(:japan) #=> "YEN"
+    show_currency(:brazil) #=> nil
