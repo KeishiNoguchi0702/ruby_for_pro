@@ -254,3 +254,20 @@
   #mergeメソッドでも同じ結果を得ることができる
   h = {us: "dollar", india: "ruppe"}
   {japan: "yen"}.merge(h) #=> {:japan=>"yen", :us=>"dollar", :india=>"ruppe"}
+#
+
+#ハッシュを使った疑似キーワード引数
+  #ハッシュを引数として受け取り、疑似キーワード引数を実現する
+  #ハッシュを受け取ってキーワード引数のように見せるテクニックを擬似キーワードという
+  def buy_burger(menu, options = {})
+    drink = options[:drink]
+    potato = options[:potato]
+  end
+
+  buy_burger("cheese", drink: true, potate: true)
+
+  #疑似キーワード引数の場合は、どんなキーワードを指定してもエラーにならない
+  #無効なキーをエラーにするためには明示的な実装が必要
+  #特別な理由がない限り、疑似キーワードよりもキーワード引数を使用したほうがよい
+  buy_burger("fish", slad: true) #=> nil
+#
