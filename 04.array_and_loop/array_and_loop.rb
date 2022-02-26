@@ -718,4 +718,16 @@ end
   end
   #1
   #LocalJumpError: unexpected return
-  
+#
+
+#next
+  #繰り返し処理を中断し、次の繰り返し処理に進めるために使用する
+  #今回は大した処理量ではないが、puts nの代わりに大規模な処理がある場合は、全体的に効率的な処理になる
+  numbers = [1,2,3,4,5]
+  numbers.each do |n|
+    next if n.even? #偶数であればputs nをスキップして次の処理へ
+    puts n
+  end
+  #1
+  #3
+  #5
