@@ -437,4 +437,7 @@
   %s!ruby is fun! #=> :"ruby is fun"
 
   #()を区切り文字に使う
-  %s(ruby is fun)
+  %s(ruby is fun) #=> :"ruby is fun"
+
+  #%i()記法でシンボルの配列を作る
+  %i(apple orange melon) #=> [:apple, :orange, :melon]
