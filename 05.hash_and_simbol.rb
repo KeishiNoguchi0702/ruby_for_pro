@@ -457,3 +457,10 @@
 
   string == symbol #=> false
   string + symbol #=> TypeError: no implicit conversion of Symbol into String
+
+  #ただし、to_symメソッドを使用すると、文字列をシンボルに変換することができる
+  string = "apple"
+  symbol = :apple
+
+  string.to_sym
+  string.to_sym == symbol #=> ture
