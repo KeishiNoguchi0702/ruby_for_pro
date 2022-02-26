@@ -527,3 +527,10 @@ end
   a = Array.new
   while a.size < 5 do a.push(1) end
   a #=> [1, 1, 1, 1, 1]
+
+  #上記のコードを、whileを修飾子として後ろに挿入することでわかりやすくする
+  a = Array.new
+  a.push(1) while a.size < 5
+  a #=> [1, 1, 1, 1, 1]
+
+  
