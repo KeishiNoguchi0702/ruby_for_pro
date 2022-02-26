@@ -545,3 +545,9 @@
 
     show_currency(:japan) #=> "YEN"
     show_currency(:brazil) #=> nil
+
+#
+
+#よく使われるイディオム：||=を使った自己代入
+  #変数limitがnilまたはfalseであれば10を代入する
+  limit ||= 10
