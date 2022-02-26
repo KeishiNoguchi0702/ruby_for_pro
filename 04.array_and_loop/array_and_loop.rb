@@ -646,3 +646,13 @@ end
       break 123
     end
   ret #=> 123
+
+  #繰り返し処理がネスト担っている場合は、内側の繰り返し処理を脱出する
+  fruits = %w(apple orange banana)
+  numbers = [1,2,3]
+  fruits.each do |fruit|
+    numbers.shuffle.each do |n|
+      puts "#{fruit}, #{n}"
+      break if n == 3
+    end
+  end
