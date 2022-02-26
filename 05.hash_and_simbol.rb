@@ -15,3 +15,10 @@
     "us" => "dollar", 
     "india" => "ruppe"
   }
+
+  #配列と同様、最後にカンマが付いていてもエラーにはならない
+  {
+    "japan" => "yen", 
+    "us" => "dollar", 
+    "india" => "ruppe",
+  }
