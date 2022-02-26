@@ -146,3 +146,11 @@
   #オブジェクトが持っているメソッドをシンボルで管理していることもある
   apple.methods #=> [:encode, ...(以下略)
   :apple.methods #=> [:match, ...(以下略)
+#
+
+#続・ハッシュ
+  #"シンボル:値"の記法でハッシュで作成する
+  currencies =  {japan: "yes", us: "dollar", india: "ruppe"}
+  currencies[:us] #=> "dollar"
+
+  
