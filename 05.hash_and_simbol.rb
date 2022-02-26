@@ -224,3 +224,10 @@
   params = {drink: true, potato: true}
   buy_burger("fish", params)
 #
+
+#ハッシュについてもっと詳しく
+  #ハッシュで使用頻度の高いメソッド
+
+  #keysメソッド
+  currencies = { japan: "yen", us: "dollar", india: "ruppe"}
+  currencies.keys # => [:japan, :us, :india]
