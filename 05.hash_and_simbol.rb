@@ -236,4 +236,8 @@
   currencies = { japan: "yen", us: "dollar", india: "ruppe"}
   currencies.values #=> ["yen", "dollar", "ruppe"]
 
+  #has_key?, key?, include?, member?
+  currencies = { japan: "yen", us: "dollar", india: "ruppe"}
+  currencies.has_key?(:japan) #=> true
+  #has_key?メソッド意外はすべて、has_key?メソッドのエイリアス
   
