@@ -28,3 +28,9 @@
   {"japan" => "yen", "japan" => "円"}
   #=> {"japan"=>"円"}
 
+  #既存のハッシュに新しいキーペアを追加する
+  currencies = Hash.new
+  currencies["Italy"] = "euro"
+  currencies #=> {"Italy"=>"euro"}
+
+  
