@@ -40,5 +40,6 @@
   #ハッシュは内部構造上、大量にデータが格納されていても高速で取得できることが特徴
   currencies = { "japan" => "yen"}
   currencies["japan"] #=> "yen"
-
+  #存在しないキーを指定した場合にはnilが返ってくる
+  currencies["Rosia"] #=> nil
   
