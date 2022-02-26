@@ -400,3 +400,14 @@
   #ハッシュにキーと値が追加されている
   h #=> {:foo=>"hello", :bar=>"hello"}
 #
+
+#シンボルについてもっと詳しく
+  #シンボルを作成するさまざまな方法
+  :apple #変数名
+  :Apple #クラス名
+  :ruby_is_fun #メソッド名
+  :okay? #メソッド名
+  :welcome!
+  :_secret
+  :$dollar #グローバル変数
+  :@at_mark #インスタンス変数
