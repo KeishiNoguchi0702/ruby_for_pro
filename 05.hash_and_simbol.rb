@@ -417,3 +417,10 @@
   :ruby-is-fun
   :ruby is fun
   :()
+
+  #ただし、上記の場合でもシングルクォートで囲むと有効になる
+  :'12344'
+  :'ruby-is-fun'
+  :'ruby is fun'
+  :'()'
+  
