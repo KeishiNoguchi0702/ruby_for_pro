@@ -423,4 +423,7 @@
   :'ruby-is-fun'
   :'ruby is fun'
   :'()'
-  
+
+  #ダブルクオーテーションを使うと、シンボル名の生成に式展開を利用できる
+  name = "Alice"
+  :"#{name.upcase}" #=> :ALICE
