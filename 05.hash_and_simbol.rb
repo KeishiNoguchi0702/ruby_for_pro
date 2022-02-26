@@ -153,4 +153,6 @@
   currencies =  {japan: "yes", us: "dollar", india: "ruppe"}
   currencies[:us] #=> "dollar"
 
+  #キーと値もハッシュの場合は下記のように記述する
+  {japan: :yen, us: :dollar, india: :ruppe}
   
