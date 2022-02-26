@@ -639,3 +639,10 @@ end
      break if n == 5
      i += 1
   end
+
+  #breakに引数をw足すと、while文やfor文の戻り値になる
+  ret =
+    while true
+      break 123
+    end
+  ret #=> 123
