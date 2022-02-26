@@ -550,4 +550,6 @@
 
 #よく使われるイディオム：||=を使った自己代入
   #変数limitがnilまたはfalseであれば10を代入する
+  limit = false
   limit ||= 10
+  limit #=> 10
