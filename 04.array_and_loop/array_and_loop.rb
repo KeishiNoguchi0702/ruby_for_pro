@@ -505,4 +505,9 @@ end
   a = Array.new
   10.downto(1) {|i| a.push(i)}
   a
-  
+
+#stepメソッド
+  a = Array.new
+  1.step(10,2) {|n| a.push(n) }
+  a #=> [1, 3, 5, 7, 9]
+
