@@ -4,3 +4,5 @@
 ③CSVが適切な値を吐き出すようにする
 ④current_calculate_total_daysが他の影響が出ないか確認する
 ⑤git pushして大丈夫か確認する
+
+#学んだこと
