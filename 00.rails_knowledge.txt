@@ -8,3 +8,5 @@
 #学んだこと
 <SQL>
 date_format('2022-02-20', '%Y-%m-%d')
+time_format(sec_to_time(working_time))
+time_format(time_to_sec(working_time))
