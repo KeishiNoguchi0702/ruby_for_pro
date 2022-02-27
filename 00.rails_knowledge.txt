@@ -5,8 +5,12 @@
 ④current_calculate_total_daysが他の影響が出ないか確認する
 ⑤git pushして大丈夫か確認する
 
+#後で調べること
+
 #学んだこと
 <SQL>
 date_format('2022-02-20', '%Y-%m-%d')
 time_format(sec_to_time(working_time))
 time_format(time_to_sec(working_time))
+
+add_sql += " WHERE time_cards.started_at BETWEEN '#{started_at}' AND '#{Date.today}' " if started_at.present?
