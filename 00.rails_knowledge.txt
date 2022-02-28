@@ -1,12 +1,13 @@
 #現在の課題
-①CSSを適切な状態にする
-②稼働状況一覧画面の合計稼働時間が適切に表示されるようにする
-③CSVが適切な値を吐き出すようにする
-④current_calculate_total_daysが他の影響が出ないか確認する
+Done ①稼働状況一覧画面の合計稼働時間が適切に表示されるようにする
+Done ②CSVが適切な値を吐き出すようにする
+Done ③current_calculate_total_daysが他の影響が出ないか確認する
+④CSSを適切な状態にする
 ⑤git pushして大丈夫か確認する
 
 #後で調べること
 Dockerのゾンビプロセス
+tmp/pids/server.pid
 
 #学んだこと
 <SQL>
@@ -14,4 +15,75 @@ date_format('2022-02-20', '%Y-%m-%d')
 time_format(sec_to_time(working_time))
 time_format(time_to_sec(working_time))
 
-add_sql += " WHERE time_cards.started_at BETWEEN '#{started_at}' AND '#{Date.today}' " if started_at.present?
+<time_cards_controller.rb>
+class Admin::TimeCardsController < AdminController
+  skip_before_action :authenticate_admin_user!, only: [:destroy] #のちに修正
+  before_action :set_user, only: [:index, :edit, :update, :destroy]
+  before_action :set_time_card, only: [:edit, :update, :destroy]
+
+  def index
+    order_ids = params[:order_id]&.reject(&:empty?)
+    #@time_cards = TimeCard.includes(%i[user order]).fetch_order_id(order_ids).fetch_user_id(params[:user_id]).fetch_started_at(params[:started_at]).order(id: "DESC")
+    @working_times = TimeCard.fetch_order_id(order_ids).fetch_user_id(params[:user_id]).fetch_started_at(params[:started_at])
+    @total_working_time = TimeCard.calculate_current_total_working_time(order_ids, params[:user_id], params[:started_at])
+    
+    if params[:year] && params[:month]
+      params[:started_at] = take_started_at_params(params[:year], params[:month])
+      @date = DateTime.new(params[:year].to_i,params[:month].to_i)
+      @time_cards =  @user.time_cards.in_month(@date).page(params[:page]).per(25)
+      @working_times = TimeCard.fetch_order_id(order_ids).fetch_user_id(params[:user_id]).in_month(@date)
+      #@total_working_time = TimeCard.calculate_current_total_working_time(order_ids, params[:user_id], @date)
+    else
+      @date = DateTime.now
+      @time_cards = @user.time_cards.this_month.page(params[:page]).per(25)
+      @working_times = TimeCard.fetch_order_id(order_ids).fetch_user_id(params[:user_id]).fetch_started_at(params[:started_at])
+      @total_working_time = TimeCard.calculate_current_total_working_time(order_ids, params[:user_id], params[:started_at])
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @time_card.update(time_card_params)
+        format.html { redirect_to admin_user_time_cards_path(@user), notice: "稼働履歴を編集しました" }
+        format.json { render json: @time_card }
+      else
+        format.html { render :edit }
+        format.json { render json: @time_card.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+      respond_to do |format|
+        if @time_card.destroy
+          format.html { redirect_to admin_user_time_cards_path(@user), notice: "稼働履歴を削除しました" }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to admin_user_time_cards_path(@user), danger: "稼働履歴を削除できませんでした" }
+        end
+      end
+  end
+
+  private
+
+  def time_card_params
+    params.require(:time_card).permit(:started_at, :finished_at)
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
+
+  def set_time_card
+    @time_card = TimeCard.find(params[:id])
+  end
+
+  #年月日検索ボタンのパラメータからparams[:started_at]の値を生成するメソッド
+  def take_started_at_params(year, month)
+    "#{year}-#{sprintf("%02d", month)}-#{sprintf("%02d", 1)}".to_datetime
+  end
+
+end
