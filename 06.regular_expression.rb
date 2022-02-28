@@ -27,3 +27,11 @@ text = <<TEXT
 TEXT
 
 puts text.gsub(/(\d{3})(\d{4})/, '\1-\2')
+
+#電話番号を探す
+text = <<-TEXT
+名前：伊藤淳一
+電話：03-1234-5678
+住所：兵庫県西脇市板波町1-2-3
+TEXT
+text.scan /\d\d-\d\d\d\d-\d\d\d\d/
